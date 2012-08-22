@@ -1,6 +1,15 @@
 # Django settings for manyphase project.
 import os
+
 DEBUG = True
+
+if DEBUG is True:
+    import socket
+    try:
+        hostname = socket.gethostname()
+    except:
+        hostname = 'localhost'
+
 TEMPLATE_DEBUG = DEBUG
 
 PROJECT_DIR = os.path.dirname(__file__)
@@ -57,11 +66,18 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = ''
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = '/static/'
+
+if hostname is 'web341.webfaction.com':
+    STATIC_ROOT = '/home/chrisbudd/webapps/manyphases_static'
+
+    STATIC_URL = 'http://manyphase.com/static/'
+else:
+    STATIC_ROOT = ''
+
+    STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -70,6 +86,7 @@ STATICFILES_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
     os.path.join(os.path.dirname(__file__),'static'),
 )
+
 
 # List of finder classes that know how to find static files in
 # various locations.
