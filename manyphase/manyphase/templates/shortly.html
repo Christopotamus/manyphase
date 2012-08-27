@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Many Phase{% endblock %}
+{% block head %}<LINK href="{{ STATIC_URL }}css/construction.css" rel="stylesheet" type="text/css">
+{% endblock %}
+{% block body %}
+    <div id="main-block">
+        <img id='logo' src='../static/images/placeholderlogo.png' />
+        {% if success %}
+            <h1 id="construction-message">You've taken the first step towards success.</h1>
+            <p id='sign-up-message'>We have your contact information and will be in touch shortly! Thanks for your interest.</p>
+        {% else %}
+
+        {% endif %}
+{% endblock %}

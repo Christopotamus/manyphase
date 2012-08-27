@@ -7,7 +7,16 @@
         <img id='logo' src='../static/images/placeholderlogo.png' />
         <h1 id="construction-message">We know how to build websites.</h1>
         <p id='sign-up-message'>We're ready to help establish your online identity, sign up to get started!</p>
-
+        <form class='contact' action="/contact/" method="post">{%csrf_token %}
+        {{ form.non_field_errors }}
+        {{ form.email.errors }}
+        <label for="id_email">Email:</label>
+        <div id='email-wrap'>
+            {{ form.email }}
+        </div>
+        <br />
+        <input id="submit"type="submit" value="Submit" />
+        </form>
         <div class='clearer'></div>
     </div>
 {% endblock %}
