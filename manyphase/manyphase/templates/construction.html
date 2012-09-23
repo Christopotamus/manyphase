@@ -3,20 +3,24 @@
 {% block head %}<LINK href="{{ STATIC_URL }}css/construction.css" rel="stylesheet" type="text/css">
 {% endblock %}
 {% block body %}
+    <div id='header'>
+        <img id='logo' src='../static/images/logo-medium.png' /> 
+    </div>
     <div id="main-block">
-        <img id='logo' src='../static/images/placeholderlogo.png' />
-        <h1 id="construction-message">We know how to build websites.</h1>
-        <p id='sign-up-message'>We're ready to help establish your online identity, sign up to get started!</p>
-        <form class='contact' action="/contact/" method="post">{%csrf_token %}
-        {{ form.non_field_errors }}
-        {{ form.email.errors }}
-        <label for="id_email">Email:</label>
-        <div id='email-wrap'>
-            {{ form.email }}
+        <div id='construction-wrap'>
+            <h1 id="construction-message">We know how to build websites.</h1>
+            <p id='sign-up-message'>We're ready to help establish your online identity, sign up to get started!</p>
+            <form class='contact' action="/contact/" method="post">{%csrf_token %}
+                {{ form.non_field_errors }}
+                {{ form.email.errors }}
+                <div id='email-wrap'>
+                    <label for="id_email">Email:</label>
+                        {{ form.email }}
+                </div>
+                <input id="submit"type="submit" value="Submit" />
+                <div class='clearer'></div>
+            </form>
+            <div class='clearer'></div>
         </div>
-        <br />
-        <input id="submit"type="submit" value="Submit" />
-        </form>
-        <div class='clearer'></div>
     </div>
 {% endblock %}

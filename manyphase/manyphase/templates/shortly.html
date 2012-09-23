@@ -4,11 +4,15 @@
 {% endblock %}
 {% block body %}
     <div id="main-block">
-        <img id='logo' src='../static/images/placeholderlogo.png' />
-        {% if success %}
-            <h1 id="construction-message">You've taken the first step towards success.</h1>
-            <p id='sign-up-message'>We have your contact information and will be in touch shortly! Thanks for your interest.</p>
-        {% else %}
+        <div id='header'>
+            <img id='logo' src='../static/images/logo-medium.png' />
+        </div>
+        <div id='construction-wrap'>
+            {% if success %}
+                <h1 id="construction-message">You've taken the first step towards success.</h1>
+                <p id='sign-up-message'>We have your contact information and will be in touch shortly! Thanks for your interest.</p>
+            {% else %}
 
-        {% endif %}
+            {% endif %}
+        </div>
 {% endblock %}

@@ -4,18 +4,25 @@ html, body{
     min-width:800px;
     min-height:100%;
     width:100%;
-    background-image:url('../images/stripe.png');
+    background-image:url('../images/stripe.png');*/
+}
+#header{
+    width:800px;
+    height:100px;
+    padding:5px;
+    margin-bottom:10px;
+    margin-left:auto;
+    margin-right:auto;
 }
 #main-block{
     width:800px;
-    margin-top:100px;
     margin-left:auto;
     margin-right:auto;
 }
 #logo{
     float:left;
-    width:200px;
-    height:200px;
+    width:250px;
+    display:block;
 }
 .clearer{
     clear:both;
