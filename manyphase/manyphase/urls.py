@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from frontend.views import construction
+from frontend.views import construction, main, ajax
 from lead.views import addEmail
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -15,6 +15,8 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', construction),
+    url(r'^$', main),
+    url(r'^[A-z]*$', main),
+    url(r'^ajax/[A-z]*$', ajax),
     url(r'^contact/', addEmail),
 )

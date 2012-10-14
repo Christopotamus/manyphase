@@ -5,13 +5,14 @@
         <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js'></script>
         <LINK href="{{ STATIC_URL }}css/base.css" rel="stylesheet" type="text/css">
         {% block head %}
-        <title>
-            {% block title %}{% endblock %}
-        </title>
         {% endblock %}
+        <title>
+            {% block titleblock %}{% endblock %}
+        </title>
     </head>
     <body>
-        {% block body %}
-        {% endblock %}
+        {% include 'header.html' %}
+        {% include 'footer.html' %}
+        {% block body %}{% endblock %}
     </body>
 </html>
