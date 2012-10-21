@@ -12,5 +12,6 @@ def addEmail(request):
             lead = Customer.objects.create(email=form_email)
             lead.save()
             return render_to_response("shortly.html", {"success":True}, context_instance=RequestContext(request))
-        else:
-            return HttpResponseRedirect('/') 
+        
+    return HttpResponseRedirect('/') 
+
