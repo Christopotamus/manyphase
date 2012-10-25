@@ -7,6 +7,7 @@ $(function(){
     }else{
         ajaxLoad(p); 
     }
+
     $(".nav-item, #logo").click(function(){
         // do ajax loading into the content div
         var id = (this.id != 'logo') ? this.id:"Home"; 
@@ -17,7 +18,8 @@ $(function(){
             $("#main-block").html(data);
             //change history state
             history.pushState(stateObj, "ManyPhase-"+id, "/"+id);
-            $("#slider").nivoSlider();
+            if($("#slider").length)
+                $("#slider").nivoSlider();
         });
         
     });
@@ -30,11 +32,12 @@ $(function(){
             page = p;
         }
 
-        ajaxLoad(page);
+        ajaxLoad(page, push=false);
     }
 });
 
-function ajaxLoad(pageName){
+function ajaxLoad(pageName, push){
+    push = typeof push !== 'undefined' ? push : true;
 
     $.ajax({
         url:"/ajax"+pageName,
@@ -42,7 +45,10 @@ function ajaxLoad(pageName){
         var stateObj = {page:pageName};
         $("#main-block").html(data);
         //change history state
-        history.pushState(stateObj, "ManyPhase"+pageName, pageName);
-        $("#slider").nivoSlider();
+        if(push == true)
+            history.pushState(stateObj, "ManyPhase"+pageName, pageName);
+
+        if($("#slider").length)
+            $("#slider").nivoSlider();
     });
 }
