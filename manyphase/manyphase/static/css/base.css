@@ -44,11 +44,33 @@ html, body{
     margin-right: 1em;
 }
 .nav-item:hover{
-    color:white;
-
+    color:rgb(190,190,190);
 }
 .nav-item:active{
-    color:rgb(120,120,120);
+    color:rgb(220,220,220);
+}
+.current-page{
+    color:rgb(100,100,100);
+    text-decoration:underline;
+}
+.left-column{
+    width:45%;
+    float:left;
+    text-align:justify;
+}
+.right-column{
+    width:45%;
+    float:right;
+    text-align:justify;
+}
+.column-image{
+    width:250px;
+    height:200px;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:10px;
+    margin-bottom:10px;
 }
 .clearer{
     clear:both;
