@@ -16,3 +16,8 @@ class PartialCustomerForm(ModelForm):
     class Meta:
         model = Customer
         fields = ('email',)
+
+class FullCustomerForm(ModelForm):
+    class Meta:
+        model = Customer
+        fields =('email', 'first_name','last_name','url','comments')

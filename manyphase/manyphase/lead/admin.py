@@ -3,5 +3,6 @@ from models import Customer
 
 class CustomerAdmin(admin.ModelAdmin):
     list_display = ('pk','first_name', 'last_name', 'url', 'email')
+    search_fields = ["first_name", "last_name", "url", "email"]
 admin.site.register(Customer, CustomerAdmin)
 
