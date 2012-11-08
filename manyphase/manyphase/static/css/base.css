@@ -75,3 +75,44 @@ html, body{
 .clearer{
     clear:both;
 }
+.contact{
+    position:relative;
+    color:rgb(100,100,100);
+}
+label{
+    float:left;
+    width:25%;
+    font-size:14pt;
+    line-height:2.0em;
+    margin-bottom:10px;
+    text-align:right;
+}
+input:not(#submit), textarea{
+    float:right;
+    display:block;
+    width:70%;
+    margin-bottom:10px;
+    font-size:12pt;
+    text-shadow: 0 0 1px white;
+    border:1px solid #DDD;
+    border-radius:3px;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-gradient(linear, left top, left 15, from(white), color-stop(4%, #F4F4F4), to(white));
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 15, from(white), color-stop(0.04, #F4F4F4), to(white));
+     -moz-linear-gradient(top, white, #F4F4F4 1px, white 15px);
+     padding:8px 6px;
+}
+textarea{
+    height:10em;
+    font-size:10pt;
+}
+.contact-options{
+    float:right;
+    text-align:right;
+}
+#submit{
+    float:right;
+    width:auto;
+    margin-top:10px 10px;
+}

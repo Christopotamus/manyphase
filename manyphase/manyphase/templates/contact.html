@@ -1,5 +1,5 @@
-<div class="right-column">
-    <p><h1>Use this form to contact us:</h1></p>
+<div class="left-column">
+    <h1>Contact Us:</h1>
     <form class='contact' action="/contact/" method="post">{%csrf_token %}
         {{ form.non_field_errors }}
         {{ form.email.errors }}
@@ -13,18 +13,27 @@
         </p>
         <p>
             <label for="id_last_name">Last Name:</label>
-            {{ form.last_name}}
+            {{ form.last_name }}
         </p>
         <p>
             <label for="id_url">URL:</label>
-            {{ form.url}}
+            {{ form.url }}
         </p>
-
         <p>
             <label for="id_comments">Comments:</label>
             {{ form.comments }}
         </p>
-        <input id="submit"type="submit" value="Submit" />
+        <p>
         <div class='clearer'></div>
+        <input id="submit"type="submit" value="Submit" />
+        </p>
     </form>
+</div>
+<div class="right-column">
+    <div class="contact-options">
+        <p>Address</p>
+        <p>Phone Number</p>
+        <p>Email</p>
+        <iframe src="http://www.google.com/talk/service/badge/Show?tk=z01q6amlq3hm5s6f644604a1dkgo6v0v4tjh3re2jcqa5noirjn8cr8rf9ug4215lorrni4oicb7plfpnmg79b8d77crjalu7q6sl49ljvl5kkml6fqpe9lbua5u0tu7rudrjejvnufu3bf1e29fffab0vmd89icmi8c5am39&amp;w=200&amp;h=60" frameborder="0" allowtransparency="true" width="200" height="60"></iframe>
+     </div>
 </div>
